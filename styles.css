@@ -1,0 +1,70 @@
+body {
+    height: 600px;
+    width: 800px;
+    font-size: x-large;
+}
+div {
+    width: 100%; background-color: lightblue; text-align: center;
+    padding: 5px;
+}
+button {
+    border: 2px;
+    color: black;
+    background-color: rgb(200, 200, 200);
+    font-size: 24pt;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: 200ms;
+    margin: 5px;
+}
+button:hover{
+    color: white;
+    background-color: black;
+    cursor: default;
+
+}
+
+
+
+/* Copied from online, might not use */
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 25px;
+    background: grey;
+    display: block;
+    border-radius: 25px;
+    position: relative;
+  }
+  
+  label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+  }
+  
+  input:checked + label {
+    background: #bada55;
+  }
+  
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+  
+  label:active:after {
+    width: 32px;
+  }

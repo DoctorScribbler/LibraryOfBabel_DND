@@ -1,0 +1,40 @@
+{
+  "name": "Library of Babel for D&D",
+  "description": "Sets up the Library of Babel for my D&D game",
+  "homepage_url": "https://libraryofbabel.info",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "48" : "hex802.png"
+  },
+  "action": {
+    "default_title": "Enter the Library",
+    "default_popup": "modal.html"
+  },
+  "content_scripts": [
+    {
+      "run_at" : "document_start",
+      "js": ["before.js"],
+      "matches": [
+        "https://libraryofbabel.info/*"
+      ]
+    },
+    {
+      "run_at" : "document_idle",
+      "js": ["after.js"],
+      "matches": [
+        "https://libraryofbabel.info/*"
+      ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://libraryofbabel.info/*"
+  ]
+}
